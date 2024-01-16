@@ -14,11 +14,14 @@ from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 import keyboard
 
+from cv_video_capt import NumbVideoCapt
+
 
 def run_cursor():
     try:
         # Камера ###########
-        cam = cv2.VideoCapture(0) # cv2.CAP_DSHOW
+        numbVC = NumbVideoCapt()
+        cam = cv2.VideoCapture(numbVC.numb) # cv2.CAP_DSHOW
         wCam, hCam = 640, 480
         cam.set(3, wCam)
         cam.set(4, hCam)

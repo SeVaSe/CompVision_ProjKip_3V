@@ -4,9 +4,13 @@ import sys
 import numpy as np
 import cv2
 
+from cv_video_capt import NumbVideoCapt
+
+
 def run_detect_peop_all():
     try:
-        cap = cv2.VideoCapture(0)
+        numbVC = NumbVideoCapt()
+        cap = cv2.VideoCapture(numbVC.numb)
         human_cascade = cv2.CascadeClassifier('data_set/haarcascade_fullbody.xml')
 
         while 1:

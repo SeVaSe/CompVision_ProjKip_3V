@@ -8,6 +8,8 @@ from matplotlib import pyplot as plt
 import time
 import mediapipe as mp
 
+from cv_video_capt import NumbVideoCapt
+
 mp_holistic = mp.solutions.holistic  # Holistic Model
 mp_drawing = mp.solutions.drawing_utils  # Drawing Utilities
 
@@ -82,7 +84,8 @@ def extract_keypoints(results):
 
 def run_detect_face():
     try:
-        cap = cv2.VideoCapture(0)  # webcam capture to cap
+        numbVC = NumbVideoCapt()
+        cap = cv2.VideoCapture(numbVC.numb)  # webcam capture to cap
         # set mediapipe models
         with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as hoslistic:
             while cap.isOpened():

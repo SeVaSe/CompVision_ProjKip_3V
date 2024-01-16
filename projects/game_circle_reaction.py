@@ -6,6 +6,8 @@ import time
 import random
 import sys
 
+from cv_video_capt import NumbVideoCapt
+
 # Инициализация библиотек
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
@@ -74,7 +76,8 @@ def run_circle_reaction_game():
 
     try:
         # Инициализация видеопотока с веб-камеры
-        video = cv2.VideoCapture(0)
+        numbVC = NumbVideoCapt()
+        video = cv2.VideoCapture(numbVC.numb)
         with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands:
             while video.isOpened():
                 _, frame = video.read()

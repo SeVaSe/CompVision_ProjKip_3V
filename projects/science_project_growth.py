@@ -3,6 +3,9 @@ import sys
 import cv2
 import mediapipe as mp
 
+from cv_video_capt import NumbVideoCapt
+
+
 def calculate_distance(x1, y1, x2, y2):
     return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
 
@@ -17,7 +20,8 @@ def run_science_project():
     mp_holistic = mp.solutions.holistic
     mp_drawing = mp.solutions.drawing_utils
 
-    cap = cv2.VideoCapture(0)
+    numbVC = NumbVideoCapt()
+    cap = cv2.VideoCapture(numbVC.numb)
     holistic = mp_holistic.Holistic()
 
     interesting_points = {

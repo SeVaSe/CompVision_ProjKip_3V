@@ -4,6 +4,9 @@ import cv2
 import mediapipe as mp
 import random
 
+from cv_video_capt import NumbVideoCapt
+
+
 # Функция для запуска игры в пинг-понг
 def run_pin_pong_game():
     try:
@@ -12,7 +15,8 @@ def run_pin_pong_game():
         hands = mp_hands.Hands()
 
         # Инициализация OpenCV
-        cap = cv2.VideoCapture(0)  # Захват видеопотока с камеры
+        numbVC = NumbVideoCapt()
+        cap = cv2.VideoCapture(numbVC.numb)  # Захват видеопотока с камеры
         width = int(cap.get(3))  # Ширина кадра
         height = int(cap.get(4))  # Высота кадра
 

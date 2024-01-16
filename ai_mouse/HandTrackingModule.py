@@ -2,6 +2,8 @@ import cv2
 import mediapipe as mp
 import math
 
+from cv_video_capt import NumbVideoCapt
+
 
 class HandDetector:
     def __init__(self, mode=False, maxHands=2, detectionCon=0.7, minTrackCon=0.6):
@@ -153,7 +155,8 @@ class HandDetector:
 
 
 def main():
-    cap = cv2.VideoCapture(0)
+    numbVC = NumbVideoCapt()
+    cap = cv2.VideoCapture(numbVC.numb)
     detector = HandDetector(detectionCon=0.8, maxHands=2)
     while True:
         # Get image frame

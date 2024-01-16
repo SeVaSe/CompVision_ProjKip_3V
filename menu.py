@@ -5,7 +5,7 @@ import math
 import time
 
 from class_gameBar import GameBar
-
+from cv_video_capt import NumbVideoCapt
 
 
 
@@ -66,7 +66,8 @@ try:
     while fl:
         if not game_active:
             # Инициализация видеозахвата с веб-камеры
-            cap = cv2.VideoCapture(0)
+            numbVC = NumbVideoCapt()
+            cap = cv2.VideoCapture(numbVC.numb)
 
             while cap.isOpened():
                 ret, frame = cap.read()
@@ -256,4 +257,6 @@ try:
 
             cap.release()
 except:
+    print()
+
     print("Чет не то...")

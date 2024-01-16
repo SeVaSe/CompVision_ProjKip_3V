@@ -6,6 +6,8 @@ import mediapipe as mp
 import numpy as np
 import colorsys
 
+from cv_video_capt import NumbVideoCapt
+
 
 def draw_lines(image, landmarks, connections, colors):
     height, width, _ = image.shape
@@ -32,7 +34,8 @@ def run_detected():
         # Инициализация модели
         pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
-        cap = cv2.VideoCapture(0)
+        numbVC = NumbVideoCapt()
+        cap = cv2.VideoCapture(numbVC.numb)
 
         while cap.isOpened():
             success, frame = cap.read()

@@ -14,6 +14,9 @@ import random
 import sys
 import subprocess
 
+from cv_video_capt import NumbVideoCapt
+
+
 def run_snake_game():
     try:
         mp_drawing = mp.solutions.drawing_utils
@@ -44,7 +47,8 @@ def run_snake_game():
         fruit = generate_fruit_location()
         special_fruit = generate_special_fruit_location()
 
-        cap = cv2.VideoCapture(0)
+        numbVC = NumbVideoCapt()
+        cap = cv2.VideoCapture(numbVC.numb)
 
         with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) as hands:
             while True:
