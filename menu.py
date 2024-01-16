@@ -60,6 +60,7 @@ orange_rect = (400, 150, rectangle_width, rectangle_height)
 biruz_rect = (400, 250, rectangle_width, rectangle_height)
 yellow_rect = (400, 350, rectangle_width, rectangle_height)
 
+qr_rect = (260, 350, 100, rectangle_height)
 
 try:
     while fl:
@@ -217,6 +218,19 @@ try:
                                         finger_pressed_time = None
                                         finger_closed = False  # Пальцы разжались
                                         break
+
+                                if time.time() - finger_pressed_time >= 0.8:
+                                    if qr_rect[0] < finger8_x < qr_rect[0] + qr_rect[2] and qr_rect[
+                                        1] < finger8_y < qr_rect[1] + qr_rect[3]:
+                                        cv2.putText(frame, "press 6", (qr_rect[0], qr_rect[1] - 10),
+                                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 200, 255), 2)
+                                        GameBar.start_game_9()
+                                        fl = False
+                                        cv2.destroyWindow("Menu")
+                                        # Сброс счётчика для следующей итерации
+                                        finger_pressed_time = None
+                                        finger_closed = False  # Пальцы разжались
+                                        break
                             else:
                                 # Если пальцы разжались до прошествия 2 секунд
                                 finger_pressed_time = None
@@ -227,14 +241,14 @@ try:
 
                 ################################################################################################
                 # Новые цвета для кнопок
-                button_colors = [(255, 105, 180), (255, 208, 0), (89, 44, 212), (255, 0, 0), (0, 255, 0), (0, 195, 255), (0, 140, 140), (38, 4, 140)]
+                button_colors = [(255, 105, 180), (255, 208, 0), (89, 44, 212), (255, 0, 0), (0, 255, 0), (0, 195, 255), (0, 140, 140), (38, 4, 140), (255, 0, 0)]
                 text_color = (255, 255, 255)  # Цвет текста на кнопках
-                button_texts = ["РЕАКЦИЯ", "ДЕТЕКТ", "НАУЧНЫЙ", "ПИН-ПОНГ", "ЗМЕЙКА", "МАСКА", "ПОИСК", "КУРСОР"]
+                button_texts = ["РЕАКЦИЯ", "ДЕТЕКТ", "НАУЧНЫЙ", "ПИН-ПОНГ", "ЗМЕЙКА", "МАСКА", "ПОИСК", "КУРСОР", "QR"]
 
 
                 # Функция для создания закругленного прямоугольника
                 # Отрисовка кнопок с новыми стилями
-                for i, rect in enumerate([pink_rect, biruz_rect, red_rect, blue_rect, green_rect, orange_rect, yellow_rect, redly_rect]):
+                for i, rect in enumerate([pink_rect, biruz_rect, red_rect, blue_rect, green_rect, orange_rect, yellow_rect, redly_rect, qr_rect]):
                     button_color = button_colors[i]
 
                     # Создание закругленного прямоугольника кнопки

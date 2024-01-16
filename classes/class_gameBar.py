@@ -7,7 +7,10 @@ from projects.science_project_growth import run_science_project
 from projects.science_detected_peop import run_detected
 from projects.detect_face import run_detect_face
 from projects.peop_detect_all import run_detect_peop_all
+from projects.qr_time import run_qr
+
 from ai_mouse.mouse_prog_cv import run_cursor
+
 
 
 
@@ -76,6 +79,14 @@ class GameBar:
         game_active = True
         cv2.destroyWindow("Menu")
         run_cursor()
+
+    @staticmethod
+    def start_game_9():
+        """Метод для запуска Курсор"""
+        global game_active
+        game_active = True
+        cv2.destroyWindow("Menu")
+        run_qr()
 
 
 

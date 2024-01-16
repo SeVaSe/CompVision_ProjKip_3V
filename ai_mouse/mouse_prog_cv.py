@@ -41,7 +41,7 @@ def run_cursor():
         ####################
 
         # Сглаживание мыши
-        smooth = 4.6
+        smooth = 5.6
         plocX, plocY = 0, 0
         clockX, clockY = 0, 0
         ####################
