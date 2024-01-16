@@ -29,7 +29,7 @@ def run_detect_peop_all():
         subprocess.run([sys.executable, "menu.py"])
         sys.exit()
     except:
-        print("С пинг-понг чет не так")
+        print("С обнаружением людей чет не так...")
         cap.release()
         cv2.destroyAllWindows()
         # Запуск меню после возникновения ошибки

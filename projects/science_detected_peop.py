@@ -72,7 +72,7 @@ def run_detected():
         sys.exit()
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Со скелетом что то не так...")
         cap.release()
         cv2.destroyAllWindows()
         subprocess.run([sys.executable, "menu.py"])

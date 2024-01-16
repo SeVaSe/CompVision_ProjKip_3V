@@ -196,7 +196,7 @@ def run_circle_reaction_game():
     except Exception as e:
         video.release()
         cv2.destroyAllWindows()
-        print("С кружками что-то не так1")
+        print("С кружками что-то не так...")
         print("Ошибка при выполнении: ", e)
 
         subprocess.run([sys.executable, "menu.py"])

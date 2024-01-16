@@ -148,6 +148,7 @@ def run_snake_game():
             subprocess.run([sys.executable, "menu.py"])
             sys.exit()
     except:
+        print("Со змейкой что то не так...")
         cap.release()
         cv2.destroyAllWindows()
         subprocess.run([sys.executable, "menu.py"])

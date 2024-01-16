@@ -248,7 +248,7 @@ def run_cursor():
         subprocess.run([sys.executable, "menu.py"])
         sys.exit()
     except:
-        print("С пинг-понг чет не так")
+        print("С мышкой чет не так...")
         cam.release()
         cv2.destroyAllWindows()
         # Запуск меню после возникновения ошибки
