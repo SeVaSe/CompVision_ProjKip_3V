@@ -1,12 +1,11 @@
 import subprocess
 import mediapipe as mp
 import cv2
-import numpy as np
 import time
 import random
 import sys
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 # Инициализация библиотек
 mp_drawing = mp.solutions.drawing_utils

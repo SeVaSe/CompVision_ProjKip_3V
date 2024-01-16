@@ -1,11 +1,10 @@
 import cv2
 import mediapipe as mp
-import threading
 import math
 import time
 
-from class_gameBar import GameBar
-from cv_video_capt import NumbVideoCapt
+from classes.class_gameBar import GameBar
+from classes.class_video_capt import NumbVideoCapt
 
 
 

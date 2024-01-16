@@ -2,7 +2,6 @@ import subprocess
 import sys
 
 import cv2
-import mediapipe as mp
 import pyautogui as pag
 import mouse
 import numpy as np
@@ -14,7 +13,7 @@ from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 import keyboard
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 def run_cursor():

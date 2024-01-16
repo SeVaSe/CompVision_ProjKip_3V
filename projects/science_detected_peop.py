@@ -6,7 +6,7 @@ import mediapipe as mp
 import numpy as np
 import colorsys
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 def draw_lines(image, landmarks, connections, colors):

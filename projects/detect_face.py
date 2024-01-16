@@ -3,12 +3,9 @@ import sys
 import cv2
 import subprocess
 import numpy as np
-import os
-from matplotlib import pyplot as plt
-import time
 import mediapipe as mp
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 mp_holistic = mp.solutions.holistic  # Holistic Model
 mp_drawing = mp.solutions.drawing_utils  # Drawing Utilities

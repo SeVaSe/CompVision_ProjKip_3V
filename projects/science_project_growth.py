@@ -3,7 +3,7 @@ import sys
 import cv2
 import mediapipe as mp
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 def calculate_distance(x1, y1, x2, y2):

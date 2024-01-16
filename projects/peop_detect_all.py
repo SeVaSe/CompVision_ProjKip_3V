@@ -1,10 +1,9 @@
 import subprocess
 import sys
 
-import numpy as np
 import cv2
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 def run_detect_peop_all():

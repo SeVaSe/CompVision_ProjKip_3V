@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import math
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 class HandDetector:

@@ -4,7 +4,7 @@ import cv2
 import mediapipe as mp
 import random
 
-from cv_video_capt import NumbVideoCapt
+from classes.class_video_capt import NumbVideoCapt
 
 
 # Функция для запуска игры в пинг-понг
